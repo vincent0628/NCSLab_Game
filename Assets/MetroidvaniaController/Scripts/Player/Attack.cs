@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
 	public bool canAttack = true;
 	public bool isTimeToCheck = false;
 
-	public ParticleSystem dashEffect;
+	public ParticleSystem particleSpark;
 	public GameObject cam;
 
 	private void Awake()
@@ -65,7 +65,8 @@ public class Attack : MonoBehaviour
 				}
 				collidersEnemies[i].gameObject.SendMessage("ApplyDamage", dmgValue);
 				cam.GetComponent<CameraFollow>().ShakeCamera();
-				dashEffect.Play();
+				particleSpark.transform.position = collidersEnemies[i].transform.position;
+				particleSpark.Play();
 			}
 		}
 	}
