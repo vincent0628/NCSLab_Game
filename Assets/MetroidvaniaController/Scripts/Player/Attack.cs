@@ -38,7 +38,9 @@ public class Attack : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-			GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), Quaternion.identity) as GameObject; 
+			Quaternion rot = Quaternion.identity;
+			rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
+			GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), rot) as GameObject; 
 			Vector2 direction = new Vector2(transform.localScale.x, 0);
 			throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction; 
 			throwableWeapon.name = "ThrowableWeapon";
