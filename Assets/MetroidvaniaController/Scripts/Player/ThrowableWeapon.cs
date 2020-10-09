@@ -8,6 +8,7 @@ public class ThrowableWeapon : MonoBehaviour
 	public bool hasHit = false;
 	public float speed = 10f;
 
+	public GameObject particleDestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class ThrowableWeapon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if ( !hasHit)
+		if (!hasHit)
 		GetComponent<Rigidbody2D>().velocity = direction * speed;
 	}
 
@@ -26,7 +27,10 @@ public class ThrowableWeapon : MonoBehaviour
 		if (collision.gameObject.tag == "Enemy")
 		{
 			collision.gameObject.SendMessage("ApplyDamage", Mathf.Sign(direction.x) * 2f);
+			GameObject destroyEffect = Instantiate(particleDestroy, collision.gameObject.transform.position, Quaternion.identity);
+			destroyEffect.GetComponent<ParticleSystem>().Play();
 			Destroy(gameObject);
+			Destroy(destroyEffect, 1.0f);
 		}
 		else if (collision.gameObject.tag != "Player")
 		{

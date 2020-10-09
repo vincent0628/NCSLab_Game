@@ -11,10 +11,12 @@ public class Attack : MonoBehaviour
 	public Animator animator;
 	public bool canAttack = true;
 	public bool isTimeToCheck = false;
-
-	public ParticleSystem particleSpark;
+	public float startTimeBtwShots;
+	private float timeBtwShots;
+	public GameObject particleSpark;
+	public GameObject particleDestroy;
 	public GameObject cam;
-
+	
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -25,7 +27,7 @@ public class Attack : MonoBehaviour
     {
         
     }
-
+	
     // Update is called once per frame
     void Update()
     {
@@ -36,14 +38,22 @@ public class Attack : MonoBehaviour
 			StartCoroutine(AttackCooldown());
 		}
 
-		if (Input.GetKeyDown(KeyCode.V))
+		if (timeBtwShots <= 0)
 		{
-			Quaternion rot = Quaternion.identity;
-			rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
-			GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), rot) as GameObject; 
-			Vector2 direction = new Vector2(transform.localScale.x, 0);
-			throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction; 
-			throwableWeapon.name = "ThrowableWeapon";
+			if (Input.GetKeyDown(KeyCode.V))
+			{
+				Quaternion rot = Quaternion.identity;
+				rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
+				GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), rot) as GameObject; 
+				Vector2 direction = new Vector2(transform.localScale.x, 0);
+				throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction;
+				throwableWeapon.GetComponent<ThrowableWeapon>().particleDestroy = particleDestroy;
+				throwableWeapon.name = "ThrowableWeapon";
+				timeBtwShots = startTimeBtwShots;
+			}
+		}
+		else {
+			timeBtwShots -= Time.deltaTime;
 		}
 	}
 
@@ -67,8 +77,9 @@ public class Attack : MonoBehaviour
 				}
 				collidersEnemies[i].gameObject.SendMessage("ApplyDamage", dmgValue);
 				cam.GetComponent<CameraFollow>().ShakeCamera();
-				particleSpark.transform.position = collidersEnemies[i].transform.position;
-				particleSpark.Play();
+				GameObject sparkEffect = Instantiate(particleSpark, collidersEnemies[i].transform.position, Quaternion.identity);
+				sparkEffect.GetComponent<ParticleSystem>().Play();
+				Destroy(sparkEffect, 1.0f);
 			}
 		}
 	}
