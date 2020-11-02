@@ -168,6 +168,10 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 			// If the player should jump...
+			if (jump)
+			{			
+				particleJumpUp.Play();
+			}
 			if (m_Grounded && jump)
 			{
 				// Add a vertical force to the player.
@@ -176,8 +180,7 @@ public class CharacterController2D : MonoBehaviour
 				m_Grounded = false;
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				canDoubleJump = true;
-				particleJumpDown.Play();
-				particleJumpUp.Play();
+				// particleJumpDown.Play();
 			}
 			else if (!m_Grounded && jump && canDoubleJump && !isWallSliding)
 			{
