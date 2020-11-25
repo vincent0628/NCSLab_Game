@@ -437,6 +437,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fff6b21050d684348a5f79a68a520e84,
         type: 3}
+    - target: {fileID: 3488324738210146569, guid: d1dab2636f533194a8c091b5cdf8f59b,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488324738210146569, guid: d1dab2636f533194a8c091b5cdf8f59b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.74
+      objectReference: {fileID: 0}
     - target: {fileID: 3631481604288580123, guid: d1dab2636f533194a8c091b5cdf8f59b,
         type: 3}
       propertyPath: m_Size.y
@@ -510,7 +520,7 @@ PrefabInstance:
     - target: {fileID: 3645740200985729857, guid: d1dab2636f533194a8c091b5cdf8f59b,
         type: 3}
       propertyPath: m_Name
-      value: AllyAISimple
+      value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 3645740200985729857, guid: d1dab2636f533194a8c091b5cdf8f59b,
         type: 3}
