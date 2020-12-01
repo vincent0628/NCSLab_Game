@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour
+public class ChickenAttack : MonoBehaviour
 {
 	public float dmgValue = 4;
 	public GameObject throwableObject;
