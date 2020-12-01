@@ -2022,7 +2022,7 @@ MonoBehaviour:
   dmgValue: 4
   throwableObject: {fileID: 5532974359214069763, guid: 340067e8e5a097546ad175f1d00a6ece,
     type: 3}
-  attackCheck: {fileID: 1675435600}
+  attackCheck: {fileID: 1626985843}
   animator: {fileID: 1473228137}
   canAttack: 1
   isTimeToCheck: 0
@@ -2308,6 +2308,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597262414}
   m_CullTransparentMesh: 0
+--- !u!4 &1626985843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8261633630879446212, guid: 866b7f23ad1568849910655dcb7b2074,
+    type: 3}
+  m_PrefabInstance: {fileID: 7487549050099559529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1655397518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,12 +2423,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1675435600 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7466549488804166701, guid: 766a677a224959e4dbfaf14261fe08c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 845026811}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868254586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5639216652467234088, guid: 866b7f23ad1568849910655dcb7b2074,
@@ -2775,16 +2775,6 @@ PrefabInstance:
     - target: {fileID: 8266411365565447682, guid: 866b7f23ad1568849910655dcb7b2074,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304128975279690300, guid: 866b7f23ad1568849910655dcb7b2074,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1302426894}
-    - target: {fileID: 8304128975279690300, guid: 866b7f23ad1568849910655dcb7b2074,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
