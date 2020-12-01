@@ -188,7 +188,7 @@ public class Ally : MonoBehaviour
 		{
 			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
 			throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
-			Vector2 direction = new Vector2(transform.localScale.x, 0f);
+			Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
 			throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
 			StartCoroutine(NextDecision(0.5f));
 		}
