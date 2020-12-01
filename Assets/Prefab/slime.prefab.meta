@@ -1,12 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Animation/Spider.meta
-guid: d5562ba9971b2af4d8f5449e61192db3
-folderAsset: yes
-DefaultImporter:
-=======
 guid: d60b5a2ae124aa04291673aeb4715148
 PrefabImporter:
->>>>>>> frank:Assets/Prefab/slime.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
