@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ally : MonoBehaviour
+public class Snake : MonoBehaviour
 {
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -88,11 +88,10 @@ public class Ally : MonoBehaviour
 					{
 						if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f)) 
 							Flip();
-
 						if (randomDecision < 0.4f)
 							Run();
 						else if (randomDecision >= 0.4f && randomDecision < 0.6f)
-							Jump();
+							Idle();
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
 							StartCoroutine(Dash());
 						else if (randomDecision >= 0.8f && randomDecision < 0.95f)
@@ -119,7 +118,7 @@ public class Ally : MonoBehaviour
 		}
 		else 
 		{
-			enemy = GameObject.Find("DrawCharacter");
+			enemy = GameObject.Find("Chicken");
 		}
 
 		if (transform.localScale.x * m_Rigidbody2D.velocity.x > 0 && !m_FacingRight && life > 0)
@@ -188,7 +187,7 @@ public class Ally : MonoBehaviour
 		{
 			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
 			throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
-			Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
+			Vector2 direction = new Vector2(transform.localScale.x, 0f);
 			throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
 			StartCoroutine(NextDecision(0.5f));
 		}
