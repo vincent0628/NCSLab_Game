@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3187412461692220820}
   - component: {fileID: 5463685001013285429}
   m_Layer: 1
-  m_Name: Chicken 1
+  m_Name: Chicken
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ MonoBehaviour:
   particleSpark: {fileID: 8558394085225944876, guid: 99dfdf817c3b53b43a893ef1d229eef9,
     type: 3}
   particleDestroy: {fileID: 400940373323520633}
-  cam: {fileID: 0}
+  cam: {fileID: 6371421874187531695, guid: 8a7776d0f80fe654eb5073db8909a521, type: 3}
 --- !u!1 &4143144802542583139
 GameObject:
   m_ObjectHideFlags: 0
