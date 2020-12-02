@@ -242,7 +242,6 @@ public class Snake : MonoBehaviour
 	public void EndDecision()
 	{
 		randomDecision = Random.Range(0.0f, 1.0f);
-		Debug.Log(randomDecision.ToString());
 		endDecision = true;
 	}
 
