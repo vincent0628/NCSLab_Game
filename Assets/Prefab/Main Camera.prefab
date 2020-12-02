@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6371421874187531695
+--- !u!1 &4377265526109888936
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6374942715288153929}
-  - component: {fileID: 6350186213048008011}
-  - component: {fileID: 6434229332544111473}
-  - component: {fileID: 6485135119396487605}
-  - component: {fileID: 6370467235289162793}
+  - component: {fileID: 4372051022877096782}
+  - component: {fileID: 4392303853542910284}
+  - component: {fileID: 4439991638458029942}
+  - component: {fileID: 4407662470941365682}
+  - component: {fileID: 4376530790073430062}
+  - component: {fileID: 7265710971170372615}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera 1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6374942715288153929
+--- !u!4 &4372051022877096782
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371421874187531695}
+  m_GameObject: {fileID: 4377265526109888936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &6350186213048008011
+--- !u!20 &4392303853542910284
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371421874187531695}
+  m_GameObject: {fileID: 4377265526109888936}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -61,7 +62,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -77,39 +78,39 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6434229332544111473
+--- !u!81 &4439991638458029942
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371421874187531695}
+  m_GameObject: {fileID: 4377265526109888936}
   m_Enabled: 1
---- !u!114 &6485135119396487605
+--- !u!114 &4407662470941365682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371421874187531695}
+  m_GameObject: {fileID: 4377265526109888936}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59d11666ee1aeff4dbb0ae6b9f495a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FollowSpeed: 5
-  Target: {fileID: 0}
+  Target: {fileID: 4137358734362853715, guid: 5b5d1e03b60697b479c31ad7c806e7b9, type: 3}
   shakeDuration: 0
   shakeAmount: 0.1
   decreaseFactor: 1
---- !u!95 &6370467235289162793
+--- !u!95 &4376530790073430062
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6371421874187531695}
+  m_GameObject: {fileID: 4377265526109888936}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8ef2990d8ac633d46a3342b7eed52676, type: 2}
@@ -121,3 +122,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7265710971170372615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4377265526109888936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71f70465f0582c4e873c2db1b4328f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 0}
+  - {fileID: 0}
+  choke: 0.5
+  scrollSpeed: 0
