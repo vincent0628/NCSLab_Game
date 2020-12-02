@@ -95,7 +95,7 @@ public class Snake : MonoBehaviour
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
 							StartCoroutine(Dash());
 						else if (randomDecision >= 0.8f && randomDecision < 0.95f)
-							RangeAttack();
+							StartCoroutine(RangeAttack());
 						else
 							Idle();
 					}
@@ -181,15 +181,20 @@ public class Snake : MonoBehaviour
 		StartCoroutine(WaitToAttack(0.5f));
 	}
 
-	public void RangeAttack()
+	public IEnumerator RangeAttack()
 	{
 		if (doOnceDecision)
 		{
-			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
-			throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
-			Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
-			throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
-			StartCoroutine(NextDecision(0.5f));
+			for(int i = 0; i < 5; ++i) {
+				Debug.Log("..");
+				GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 1.0f, 1.0f), Quaternion.identity) as GameObject;
+				throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
+				Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
+				throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
+				throwableProj.GetComponent<ThrowableProjectile>().speed = (6.0f + i*0.5f);
+				yield return new WaitForSeconds(0.15f);
+			}
+			StartCoroutine(NextDecision(1.0f));
 		}
 	}
 
@@ -243,6 +248,7 @@ public class Snake : MonoBehaviour
 		canAttack = false;
 		yield return new WaitForSeconds(time);
 		canAttack = true;
+		EndDecision();
 	}
 
 	IEnumerator Dash()

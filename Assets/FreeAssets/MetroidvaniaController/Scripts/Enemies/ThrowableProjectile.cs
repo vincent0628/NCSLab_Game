@@ -42,7 +42,8 @@ public class ThrowableProjectile : MonoBehaviour
 		}
 		else if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Player")
 		{
-			Destroy(gameObject);
+			if (collision.gameObject.tag != "Slime")
+				Destroy(gameObject);
 		}
 	}
 }

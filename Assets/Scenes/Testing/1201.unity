@@ -10407,6 +10407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 7466549488454046011, guid: 766a677a224959e4dbfaf14261fe08c7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7466549488454045987, guid: 766a677a224959e4dbfaf14261fe08c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 766a677a224959e4dbfaf14261fe08c7, type: 3}
@@ -11228,6 +11233,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4652661945987067202, guid: 2cdfddfe47f382e4ca3aeca5a068803d,
         type: 3}
+    - target: {fileID: 7466549488454045987, guid: d1dab2636f533194a8c091b5cdf8f59b,
+        type: 3}
+      propertyPath: isInvincible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466549488454045988, guid: d1dab2636f533194a8c091b5cdf8f59b,
         type: 3}
       propertyPath: m_LocalPosition.x
