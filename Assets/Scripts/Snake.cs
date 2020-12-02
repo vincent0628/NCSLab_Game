@@ -53,6 +53,7 @@ public class Snake : MonoBehaviour
 
 		else if (enemy != null) 
 		{
+			// randomDecision = Random.Range(0.0f, 1.0f);
 			if (isDashing)
 			{
 				m_Rigidbody2D.velocity = new Vector2(transform.localScale.x * m_DashForce, 0);
@@ -74,7 +75,7 @@ public class Snake : MonoBehaviour
 						Flip();
 					if (canAttack)
 					{
-						MeleeAttack();
+						RangeAttack();
 					}
 				}
 				else if (Mathf.Abs(distToPlayer) > meleeDist && Mathf.Abs(distToPlayer) < rangeDist)
@@ -86,16 +87,31 @@ public class Snake : MonoBehaviour
 				{
 					if (!endDecision)
 					{
-						if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f)) 
+						if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+						{ 							
 							Flip();
+							randomDecision = Random.Range(0.0f, 1.0f);
+						}
 						if (randomDecision < 0.4f)
+						{ 
 							Run();
+							randomDecision = Random.Range(0.0f, 1.0f);
+						}
 						else if (randomDecision >= 0.4f && randomDecision < 0.6f)
+						{ 
 							MeleeAttack();
+							randomDecision = Random.Range(0.0f, 1.0f);
+						}
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
-							StartCoroutine(Dash());
+						{ 
+						    StartCoroutine(Dash());
+							randomDecision = Random.Range(0.0f, 1.0f);
+						}
 						else if (randomDecision >= 0.8f && randomDecision < 0.95f)
+						{ 
 							RangeAttack();
+							randomDecision = Random.Range(0.0f, 1.0f);
+						}
 						else
 							Idle();
 					}
@@ -225,7 +241,8 @@ public class Snake : MonoBehaviour
 
 	public void EndDecision()
 	{
-		randomDecision = Random.Range(0.0f, 1.0f); 
+		randomDecision = Random.Range(0.0f, 1.0f);
+		Debug.Log(randomDecision.ToString());
 		endDecision = true;
 	}
 
