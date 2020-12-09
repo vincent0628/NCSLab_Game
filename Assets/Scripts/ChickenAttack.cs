@@ -95,6 +95,7 @@ public class ChickenAttack : MonoBehaviour
 
 	public void DoDashDamage()
 	{
+		Debug.Log("DoDashDamage()");
 		dmgValue = Mathf.Abs(dmgValue);
 		Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
 		for (int i = 0; i < collidersEnemies.Length; i++)
@@ -111,6 +112,7 @@ public class ChickenAttack : MonoBehaviour
 				sparkEffect.GetComponent<ParticleSystem>().Play();
 				Destroy(sparkEffect, 1.0f);
 			}
+			Debug.Log("Collision occured!!!!!");
 		}
 	}
 }
