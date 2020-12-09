@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChickenAttack : MonoBehaviour
 {
 	public float dmgValue = 4;
+	public int throwableWeaponNum = 5;
 	public GameObject throwableObject;
 	public Transform attackCheck;
 	private Rigidbody2D m_Rigidbody2D;
@@ -58,12 +59,13 @@ public class ChickenAttack : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-		//	if (timeBtwShots <= 0)
-		//	{
+			if (throwableWeaponNum > 0)
+			{
 				Quaternion rot = Quaternion.identity;
 				rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
 				StartCoroutine(Attack(rot));
-		//	}
+				throwableWeaponNum--;
+			}
 		//	else
 		//	{
 		//		timeBtwShots -= Time.deltaTime;
@@ -93,6 +95,7 @@ public class ChickenAttack : MonoBehaviour
 
 	public void DoDashDamage()
 	{
+		Debug.Log("DoDashDamage()");
 		dmgValue = Mathf.Abs(dmgValue);
 		Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
 		for (int i = 0; i < collidersEnemies.Length; i++)
@@ -109,6 +112,7 @@ public class ChickenAttack : MonoBehaviour
 				sparkEffect.GetComponent<ParticleSystem>().Play();
 				Destroy(sparkEffect, 1.0f);
 			}
+			Debug.Log("Collision occured!!!!!");
 		}
 	}
 }
