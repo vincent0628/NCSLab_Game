@@ -24,15 +24,16 @@ public class Setting : MonoBehaviour
  {
      waited = true;
  }
- void TaskOnClick(){
- 	Debug.Log("....");
-		 if (paused)
-             paused = false;
-         else
-             paused = true;
-         waited = false;
-         Invoke("waiting", 0.3f);
-	}
+ void TaskOnClick()
+ {
+    Debug.Log("....");
+    if (paused)
+        paused = false;
+    else
+        paused = true;
+    waited = false;
+    Invoke("waiting", 0.3f);
+}
  public void Update()
  {
 		
