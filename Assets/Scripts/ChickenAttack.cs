@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChickenAttack : MonoBehaviour
 {
 	public float dmgValue = 4;
+	public int throwableWeaponNum = 5;
 	public GameObject throwableObject;
 	public Transform attackCheck;
 	private Rigidbody2D m_Rigidbody2D;
@@ -58,12 +59,13 @@ public class ChickenAttack : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.V))
 		{
-		//	if (timeBtwShots <= 0)
-		//	{
+			if (throwableWeaponNum > 0)
+			{
 				Quaternion rot = Quaternion.identity;
 				rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
 				StartCoroutine(Attack(rot));
-		//	}
+				throwableWeaponNum--;
+			}
 		//	else
 		//	{
 		//		timeBtwShots -= Time.deltaTime;
