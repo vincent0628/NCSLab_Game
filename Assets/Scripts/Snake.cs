@@ -75,7 +75,7 @@ public class Snake : MonoBehaviour
 						Flip();
 					if (canAttack)
 					{
-						RangeAttack();
+						MeleeAttack();
 					}
 				}
 				else if (Mathf.Abs(distToPlayer) > meleeDist && Mathf.Abs(distToPlayer) < rangeDist)
@@ -91,20 +91,20 @@ public class Snake : MonoBehaviour
 						{ 							
 							Flip();
 						}
-						if (randomDecision < 0.4f)
+						if (randomDecision < 0.6f)
 						{ 
 							Run();
 						}
-						else if (randomDecision >= 0.4f && randomDecision < 0.6f)
-						{ 
-							MeleeAttack();
-						}
+						// else if (randomDecision >= 0.4f && randomDecision < 0.6f && canAttack)
+						// { 
+						// 	MeleeAttack();
+						// }
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
 						{ 
 						    StartCoroutine(Dash());
 						}
 						else if (randomDecision >= 0.8f && randomDecision < 0.95f)
-							StartCoroutine(RangeAttack());
+							RangeAttack();
 						else
 							Idle();
 					}
@@ -187,10 +187,10 @@ public class Snake : MonoBehaviour
 				collidersEnemies[i].gameObject.GetComponent<CharacterController2D>().ApplyDamage(2f, transform.position);
 			}
 		}
-		StartCoroutine(WaitToAttack(0.5f));
+		StartCoroutine(WaitToAttack(0.8f));
 	}
 
-	public IEnumerator RangeAttack()
+	public void RangeAttack()
 	{
 		if (doOnceDecision)
 		{
@@ -200,9 +200,8 @@ public class Snake : MonoBehaviour
 				Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
 				throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
 				throwableProj.GetComponent<ThrowableProjectile>().speed = (6.0f + i);
-				yield return new WaitForSeconds(0f);
 			}
-			StartCoroutine(NextDecision(0f));
+			StartCoroutine(NextDecision(0.5f));
 		}
 	}
 
