@@ -26,7 +26,6 @@ public class Setting : MonoBehaviour
  }
  void TaskOnClick()
  {
-    Debug.Log("....");
     if (paused)
         paused = false;
     else
