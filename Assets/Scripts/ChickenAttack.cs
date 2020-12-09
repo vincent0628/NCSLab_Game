@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChickenAttack : MonoBehaviour
 {
 	public float dmgValue = 4;
-	public int throwableWeaponNum = 5;
 	public GameObject throwableObject;
 	public Transform attackCheck;
 	private Rigidbody2D m_Rigidbody2D;
@@ -17,6 +16,8 @@ public class ChickenAttack : MonoBehaviour
 	public GameObject particleSpark;
 	public GameObject particleDestroy;
 	public GameObject cam;
+	Abilities throwableScript;
+	int throwableWeaponNum;
 	
 	private void Awake()
 	{
@@ -26,7 +27,8 @@ public class ChickenAttack : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
+		GameObject throwableUI = GameObject.Find("StatusUI");
+		throwableScript = throwableUI.GetComponent<Abilities>();
     }
 	
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class ChickenAttack : MonoBehaviour
 			StartCoroutine(AttackCooldown());
 		}
 
+		throwableWeaponNum = throwableScript.throwableWeaponNum;
 		if (timeBtwShots <= 0)
 		{
 			if (Input.GetKeyDown(KeyCode.V) && throwableWeaponNum > 0)
