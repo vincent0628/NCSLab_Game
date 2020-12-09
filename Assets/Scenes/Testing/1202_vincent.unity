@@ -11655,6 +11655,31 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3187412461692220820, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: hearts.Array.data[5]
+      value: 
+      objectReference: {fileID: 504919563}
+    - target: {fileID: 3187412461692220820, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: hearts.Array.data[6]
+      value: 
+      objectReference: {fileID: 1227208005}
+    - target: {fileID: 3187412461692220820, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: hearts.Array.data[7]
+      value: 
+      objectReference: {fileID: 206837399}
+    - target: {fileID: 3187412461692220820, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: hearts.Array.data[8]
+      value: 
+      objectReference: {fileID: 675888533}
+    - target: {fileID: 3187412461692220820, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: hearts.Array.data[9]
+      value: 
+      objectReference: {fileID: 260123578}
     - target: {fileID: 4137358734362853715, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11714,6 +11739,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291639677955388023, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291639677955388023, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291639677955388023, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 5463685001013285429, guid: 5b5d1e03b60697b479c31ad7c806e7b9,
         type: 3}
@@ -11808,6 +11848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 6354558790764570128, guid: 418440287fe8a7d45a20f894472ed04f,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6354558790764570130, guid: 418440287fe8a7d45a20f894472ed04f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11863,5 +11908,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6354558790764570133, guid: 418440287fe8a7d45a20f894472ed04f,
+        type: 3}
+      propertyPath: throwableObject
+      value: 
+      objectReference: {fileID: 4652661945987067202, guid: 2cdfddfe47f382e4ca3aeca5a068803d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 418440287fe8a7d45a20f894472ed04f, type: 3}

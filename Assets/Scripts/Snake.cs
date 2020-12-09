@@ -90,28 +90,21 @@ public class Snake : MonoBehaviour
 						if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
 						{ 							
 							Flip();
-							randomDecision = Random.Range(0.0f, 1.0f);
 						}
 						if (randomDecision < 0.4f)
 						{ 
 							Run();
-							randomDecision = Random.Range(0.0f, 1.0f);
 						}
 						else if (randomDecision >= 0.4f && randomDecision < 0.6f)
 						{ 
 							MeleeAttack();
-							randomDecision = Random.Range(0.0f, 1.0f);
 						}
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
 						{ 
 						    StartCoroutine(Dash());
-							randomDecision = Random.Range(0.0f, 1.0f);
 						}
 						else if (randomDecision >= 0.8f && randomDecision < 0.95f)
-						{ 
-							RangeAttack();
-							randomDecision = Random.Range(0.0f, 1.0f);
-						}
+							StartCoroutine(RangeAttack());
 						else
 							Idle();
 					}
@@ -197,15 +190,19 @@ public class Snake : MonoBehaviour
 		StartCoroutine(WaitToAttack(0.5f));
 	}
 
-	public void RangeAttack()
+	public IEnumerator RangeAttack()
 	{
 		if (doOnceDecision)
 		{
-			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
-			throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
-			Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
-			throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
-			StartCoroutine(NextDecision(0.5f));
+			for(int i = 0; i < 5; ++i) {
+				GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 1.0f, 1.0f), Quaternion.identity) as GameObject;
+				throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
+				Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
+				throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
+				throwableProj.GetComponent<ThrowableProjectile>().speed = (6.0f + i);
+				yield return new WaitForSeconds(0f);
+			}
+			StartCoroutine(NextDecision(0f));
 		}
 	}
 
@@ -259,6 +256,7 @@ public class Snake : MonoBehaviour
 		canAttack = false;
 		yield return new WaitForSeconds(time);
 		canAttack = true;
+		EndDecision();
 	}
 
 	IEnumerator Dash()
