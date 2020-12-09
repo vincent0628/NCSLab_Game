@@ -8,7 +8,7 @@ public class Timer: MonoBehaviour {
   public Image loading;
   public Text timeText;
   private int minutes = 0;
-  private int sec = 5;
+  public int sec = 5;
   int totalSeconds = 0;
   int TOTAL_SECONDS = 0;
   float fillamount;

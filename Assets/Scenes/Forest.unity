@@ -12587,6 +12587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loading: {fileID: 377829285}
   timeText: {fileID: 327057439}
+  sec: 60
 --- !u!1 &1976144679
 GameObject:
   m_ObjectHideFlags: 0
