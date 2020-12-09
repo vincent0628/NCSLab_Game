@@ -11900,6 +11900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass2
       objectReference: {fileID: 0}
+    - target: {fileID: 5366117393047215610, guid: 21e2330772950f345b2b6bf40bb56947,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e2330772950f345b2b6bf40bb56947, type: 3}
 --- !u!1 &1337878280
@@ -23186,6 +23191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110849684179771141, guid: 29fa5c2f34acfa444b60127d74a62f96,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
       objectReference: {fileID: 0}
     - target: {fileID: 2115935186322174673, guid: 29fa5c2f34acfa444b60127d74a62f96,
         type: 3}
