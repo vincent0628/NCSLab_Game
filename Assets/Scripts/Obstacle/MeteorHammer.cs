@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class MeteorHammer : MonoBehaviour
 {
     public float thetaNaught = 90.0f;
-    public float ratio = 3.0f;
-    private float prev_theta;
+    public float frequency = 3.0f;
 
     void Start()
     {
     }
     void FixedUpdate()
     { 
-        float theta = thetaNaught * Mathf.Cos(Mathf.Sqrt(ratio) * Time.time);
+        float theta = thetaNaught * Mathf.Cos(Mathf.Sqrt(frequency) * Time.time);
         transform.eulerAngles = new Vector3(0, 0,theta);
     }
 }
