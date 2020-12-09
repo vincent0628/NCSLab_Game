@@ -9,10 +9,11 @@ public class Treasure : MonoBehaviour {
     [SerializeField]
 
     private bool pickUpAllowed;
-	public GameObject Chicken;
+	private GameObject Chicken;
 	// Use this for initialization
 	private void Start () {
 		pickUpAllowed = false;
+        Chicken = GameObject.Find("Chicken");
 	}
 	
 	// Update is called once per frame
