@@ -39,38 +39,32 @@ public class ChickenAttack : MonoBehaviour
 			StartCoroutine(AttackCooldown());
 		}
 
-		//if (timeBtwShots <= 0)
-		//{
-		//	if (Input.GetKeyDown(KeyCode.V))
-		//	{
-		//		Quaternion rot = Quaternion.identity;
-		//		rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
-		//		GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), rot) as GameObject; 
-		//		Vector2 direction = new Vector2(transform.localScale.x, 0);
-		//		throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction;
-		//		throwableWeapon.GetComponent<ThrowableWeapon>().particleDestroy = particleDestroy;
-		//		throwableWeapon.name = "ThrowableWeapon";
-		//		timeBtwShots = startTimeBtwShots;
-		//	}
-		//}
-		//else {
-		//	timeBtwShots -= Time.deltaTime;
-		//}
-
-		if (Input.GetKeyDown(KeyCode.V))
+		if (timeBtwShots <= 0)
 		{
-			if (throwableWeaponNum > 0)
+			if (Input.GetKeyDown(KeyCode.V) && throwableWeaponNum > 0)
 			{
+				--throwableWeaponNum;
 				Quaternion rot = Quaternion.identity;
 				rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
-				StartCoroutine(Attack(rot));
-				throwableWeaponNum--;
+				GameObject throwableWeapon = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f,-0.2f), rot) as GameObject; 
+				Vector2 direction = new Vector2(transform.localScale.x, 0);
+				throwableWeapon.GetComponent<ThrowableWeapon>().direction = direction;
+				throwableWeapon.GetComponent<ThrowableWeapon>().particleDestroy = particleDestroy;
+				throwableWeapon.name = "ThrowableWeapon";
+				timeBtwShots = startTimeBtwShots;
 			}
-		//	else
-		//	{
-		//		timeBtwShots -= Time.deltaTime;
-		//	}
 		}
+		else {
+			timeBtwShots -= Time.deltaTime;
+		}
+
+		// if (Input.GetKeyDown(KeyCode.V) && throwableWeaponNum > 0)
+		// {
+		// 		--throwableWeaponNum;
+		// 		Quaternion rot = Quaternion.identity;
+		// 		rot.eulerAngles = new Vector3(0, 0, transform.localScale.x * -90);
+		// 		StartCoroutine(Attack(rot));
+		// }
 	}
 
 	IEnumerator Attack(Quaternion rot)
