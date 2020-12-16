@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowableProjectile : MonoBehaviour
+public class ThrowableSlime : MonoBehaviour
 {
 	public Vector2 direction;
 	public bool hasHit = false;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowableProjectile : MonoBehaviour
+public class ThrowableSilk : MonoBehaviour
 {
 	public Vector2 direction;
 	public bool hasHit = false;
@@ -12,7 +12,6 @@ public class ThrowableProjectile : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-		GetComponent<Rigidbody2D>().velocity = direction * speed;   
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class ThrowableProjectile : MonoBehaviour
 			direction.y  = vy / speed;
 			GetComponent<Rigidbody2D>().velocity = direction * speed;
 			float ang = Mathf.Atan2(vy, vx);
-			GetComponent<Rigidbody2D>().rotation = Mathf.Rad2Deg * ang - 90.0f;
+			GetComponent<Rigidbody2D>().rotation = Mathf.Rad2Deg * ang - 180f;
 		}
 	}
 
