@@ -264,7 +264,7 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-	public void ApplyDamage(float damage, Vector3 position) 
+	public void ApplyDamage(float damage, Vector3 position, float force=0f ) 
 	{
 		if (!invincible)
 		{
@@ -272,7 +272,14 @@ public class CharacterController2D : MonoBehaviour
 			life -= damage;
 			Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f ;
 			m_Rigidbody2D.velocity = Vector2.zero;
-			m_Rigidbody2D.AddForce(damageDir * 10);
+			if (force!=0f )
+			{
+				m_Rigidbody2D.AddForce(damageDir * force);
+			}
+			else{
+				m_Rigidbody2D.AddForce(damageDir * 10);
+			}
+
 			if (life <= 0)
 			{
 				StartCoroutine(WaitToDead());
