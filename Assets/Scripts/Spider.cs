@@ -185,10 +185,12 @@ public class Spider : MonoBehaviour
 	{
 		if (doOnceDecision)
 		{
-			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 0.5f, -0.2f), Quaternion.identity) as GameObject;
-			throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
+			Quaternion rot = Quaternion.identity;
+			rot.eulerAngles = transform.localScale.x > 0 ? new Vector3(0, 0, 180) : new Vector3(0, 0, 0);
+			GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 3f, 0f), rot) as GameObject;
+			throwableProj.GetComponent<ThrowableSilk>().owner = gameObject;
 			Vector2 direction = new Vector2(transform.localScale.x, 0f);
-			throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
+			throwableProj.GetComponent<ThrowableSilk>().direction = direction;
 			StartCoroutine(NextDecision(0.5f));
 		}
 	}

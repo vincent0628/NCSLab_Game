@@ -95,10 +95,10 @@ public class Snake : MonoBehaviour
 						{ 
 							Run();
 						}
-						// else if (randomDecision >= 0.4f && randomDecision < 0.6f && canAttack)
-						// { 
-						// 	MeleeAttack();
-						// }
+						else if (randomDecision >= 0.4f && randomDecision < 0.6f && canAttack)
+						{ 
+							MeleeAttack();
+						}
 						else if (randomDecision >= 0.6f && randomDecision < 0.8f)
 						{ 
 						    StartCoroutine(Dash());
@@ -196,10 +196,10 @@ public class Snake : MonoBehaviour
 		{
 			for(int i = 0; i < 5; ++i) {
 				GameObject throwableProj = Instantiate(throwableObject, transform.position + new Vector3(transform.localScale.x * 1.0f, 1.0f), Quaternion.identity) as GameObject;
-				throwableProj.GetComponent<ThrowableProjectile>().owner = gameObject;
+				throwableProj.GetComponent<ThrowableSlime>().owner = gameObject;
 				Vector2 direction = new Vector2(transform.localScale.x, 1.732f);
-				throwableProj.GetComponent<ThrowableProjectile>().direction = direction;
-				throwableProj.GetComponent<ThrowableProjectile>().speed = (6.0f + i);
+				throwableProj.GetComponent<ThrowableSlime>().direction = direction;
+				throwableProj.GetComponent<ThrowableSlime>().speed = (6.0f + i);
 			}
 			StartCoroutine(NextDecision(0.5f));
 		}
