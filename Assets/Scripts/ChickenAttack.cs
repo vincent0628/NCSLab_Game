@@ -44,7 +44,7 @@ public class ChickenAttack : MonoBehaviour
 		throwableWeaponNum = throwableScript.throwableWeaponNum;
 		if (timeBtwShots <= 0)
 		{
-			if (Input.GetKeyDown(KeyCode.V) && throwableWeaponNum > 0)
+			if (Input.GetKey(KeyCode.V) && throwableWeaponNum > 0)
 			{
 				--throwableWeaponNum;
 				Quaternion rot = Quaternion.identity;

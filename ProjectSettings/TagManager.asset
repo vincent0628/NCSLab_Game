@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Slime
   - Grass
+  - Threat
   layers:
   - Default
   - TransparentFX
