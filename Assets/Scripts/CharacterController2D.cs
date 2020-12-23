@@ -178,6 +178,10 @@ public class CharacterController2D : MonoBehaviour
 				animator.SetBool("IsJumping", true);
 				animator.SetBool("JumpUp", true);
 				m_Grounded = false;
+				if ( GameObject.Find("Chicken").transform.GetChild(7).gameObject.active)
+				{
+					m_JumpForce = 1400;
+				}
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 				canDoubleJump = true;
 				// particleJumpDown.Play();
