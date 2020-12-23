@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
 
     public GameObject gameOverUI;
-    public GameObject healthBarUI;
 
     void Update()
     {
