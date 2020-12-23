@@ -56,6 +56,11 @@ public class Abilities : MonoBehaviour
                 isCooldown = false;
             }
         }
+
+        if (GameObject.Find("Chicken").transform.GetChild(7).gameObject.activeSelf)
+        {
+            shoeImage.fillAmount = 1;
+        }
     }
 
     void Recover()

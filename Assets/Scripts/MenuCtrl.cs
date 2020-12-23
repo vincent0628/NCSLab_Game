@@ -27,5 +27,4 @@ public class MenuCtrl : MonoBehaviour
         Debug.Log("QUIT!");
         Application.Quit();
     }
-    
 }
