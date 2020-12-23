@@ -22,11 +22,12 @@ public class Spider : MonoBehaviour
 	public GameObject enemy;
 	private float distToPlayer;
 	private float distToPlayerY;
-	public float meleeDist = 1.5f;
+	public float meleeDist = 1.1f;
 	public float rangeDist = 5f;
 	private bool canAttack = true;
 	private Transform attackCheck;
 	public float dmgValue = 4;
+	private float sensingDistatnce = 20.0f;
 
 	public GameObject throwableObject;
 
@@ -62,12 +63,12 @@ public class Spider : MonoBehaviour
 				distToPlayer = enemy.transform.position.x - transform.position.x;
 				distToPlayerY = enemy.transform.position.y - transform.position.y;
 
-				if (Mathf.Abs(distToPlayer) < 0.25f)
+				if (Mathf.Abs(distToPlayer) > sensingDistatnce)
 				{
 					GetComponent<Rigidbody2D>().velocity = new Vector2(0f, m_Rigidbody2D.velocity.y);
 					anim.SetBool("IsWaiting", true);
 				}
-				else if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f)
+				else if (Mathf.Abs(distToPlayer) < sensingDistatnce && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f)
 				{
 					GetComponent<Rigidbody2D>().velocity = new Vector2(0f, m_Rigidbody2D.velocity.y);
 					if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f)) 
