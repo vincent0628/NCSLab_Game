@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgValue: 4
-  throwableWeaponNum: 5
   throwableObject: {fileID: 5532974359214069763, guid: 340067e8e5a097546ad175f1d00a6ece,
     type: 3}
   attackCheck: {fileID: 4140444733177858965}
