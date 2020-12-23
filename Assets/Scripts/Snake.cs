@@ -22,8 +22,8 @@ public class Snake : MonoBehaviour
 	public GameObject enemy;
 	private float distToPlayer;
 	private float distToPlayerY;
-	public float meleeDist = 1.5f;
-	public float rangeDist = 5f;
+	public float meleeDist = 4.0f;
+	public float rangeDist = 9.0f;
 	private bool canAttack = true;
 	private Transform attackCheck;
 	public float dmgValue = 4;
