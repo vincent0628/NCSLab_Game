@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7294386961694411958}
   - component: {fileID: 7294386961694411961}
-  m_Layer: 9
-  m_Name: SpiderDot
+  m_Layer: 8
+  m_Name: EnemyDot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
