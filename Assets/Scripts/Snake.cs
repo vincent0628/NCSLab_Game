@@ -63,12 +63,14 @@ public class Snake : MonoBehaviour
 				distToPlayer = enemy.transform.position.x - transform.position.x;
 				distToPlayerY = enemy.transform.position.y - transform.position.y;
 
-				if (Mathf.Abs(distToPlayer) < 0.25f)
+				// if (Mathf.Abs(distToPlayer) < 0.25f)
+				if (Mathf.Abs(distToPlayer) > 20.0f)
 				{
 					GetComponent<Rigidbody2D>().velocity = new Vector2(0f, m_Rigidbody2D.velocity.y);
 					anim.SetBool("IsWaiting", true);
 				}
-				else if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f)
+				// else if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f)
+				else if (Mathf.Abs(distToPlayer) < 20.0f && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f)
 				{
 					GetComponent<Rigidbody2D>().velocity = new Vector2(0f, m_Rigidbody2D.velocity.y);
 					if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f)) 
