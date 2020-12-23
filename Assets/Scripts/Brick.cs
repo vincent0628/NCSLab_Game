@@ -15,7 +15,9 @@ public class Brick : MonoBehaviour
     {
         if(col.gameObject.name.Equals("Chicken")) {
             ContactPoint2D contact = col.contacts[0];
-            if(contact.point.y > transform.position.y) {
+            Debug.Log(contact.point.y);
+            Debug.Log(transform.position.y);
+            if(contact.point.y > transform.position.y+1.0) {
                 Invoke("DropPlatform", 0.5f);
                 Destroy(gameObject, 1f);
             }
