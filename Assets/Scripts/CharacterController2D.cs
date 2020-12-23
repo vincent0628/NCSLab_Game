@@ -178,7 +178,7 @@ public class CharacterController2D : MonoBehaviour
 				animator.SetBool("IsJumping", true);
 				animator.SetBool("JumpUp", true);
 				m_Grounded = false;
-				if ( GameObject.Find("Chicken").transform.GetChild(7).gameObject.active)
+				if ( GameObject.Find("Chicken").transform.GetChild(7).gameObject.activeSelf)
 				{
 					m_JumpForce = 1400;
 				}

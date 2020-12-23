@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Abilities : MonoBehaviour
 {
 
+    public Image shoeImage;
     public Image maskImage;
     public Image recoverImage;
     public Text leftNum;
@@ -21,6 +22,7 @@ public class Abilities : MonoBehaviour
     void Start()
     {
         maskImage.fillAmount = 0;
+        shoeImage.fillAmount = 0;
         recoverImage.fillAmount = 0;
         leftNum.text = throwableWeaponNum.ToString();
         throwableWeaponMax = throwableWeaponNum;
@@ -53,6 +55,11 @@ public class Abilities : MonoBehaviour
                 maskImage.fillAmount = 0;
                 isCooldown = false;
             }
+        }
+
+        if (GameObject.Find("Chicken").transform.GetChild(7).gameObject.activeSelf)
+        {
+            shoeImage.fillAmount = 1;
         }
     }
 
