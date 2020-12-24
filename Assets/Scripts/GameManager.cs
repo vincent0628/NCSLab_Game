@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
+    bool gameHasCleared = false;
 
     public GameObject gameOverUI;
+    public GameObject gameClearUI;
 
     void Update()
     {
-        if(Input.anyKeyDown && gameHasEnded)
+        if(Input.anyKeyDown && (gameHasEnded || gameHasCleared))
             Restart();
     }
 
@@ -23,15 +25,34 @@ public class GameManager : MonoBehaviour
         }
     }
     
+
+    public void ClearGame()
+    {
+        if(gameHasCleared == false)
+        {
+            gameHasCleared = true;
+            Debug.Log("GAME Clear");
+            GameClear();
+        }
+    }
+
     public void GameOver()
     {
         gameOverUI.SetActive(true);
 
     }
 
+    public void GameClear()
+    {
+        gameClearUI.SetActive(true);
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (gameHasCleared)
+            SceneManager.LoadScene(0);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
