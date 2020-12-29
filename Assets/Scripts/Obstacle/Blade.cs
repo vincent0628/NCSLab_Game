@@ -41,7 +41,7 @@ public class Blade : MonoBehaviour
 
     public void BladeAttack()
     {
-        Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(transform.position, 2f);
+        Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(transform.position, 0.78f);
         for (int i = 0; i < collidersEnemies.Length; i++)
         {
             if (collidersEnemies[i].gameObject.tag == "Player")
